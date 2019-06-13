@@ -16,7 +16,6 @@ Plug 'scrooloose/nerdtree'
 Plug 'godlygeek/tabular'
 Plug 'plasticboy/vim-markdown'
 Plug 'vim-syntastic/syntastic'
-Plug 'altercation/vim-colors-solarized'
 call plug#end()
 filetype plugin indent on    " required
 
@@ -30,9 +29,6 @@ map <F6> :setlocal spell! spelllang=en_au<CR>
 " markdown plugin config
 let g:vim_markdown_folding_disabled = 1
 set t_Co=256   " This is may or may not needed.
-
-set background=light
-colorscheme PaperColor
 
 
 " Number of visual spaces per tab and spaces per tab when editing
