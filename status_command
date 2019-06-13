@@ -1,0 +1,51 @@
+#!/bin/bash
+# Screenshot: http://s.natalian.org/2013-08-17/dwm_status.png
+# Network speed stuff stolen from http://linuxclues.blogspot.sg/2009/11/shell-script-show-
+
+print_mem(){
+	free -h | grep Mem | awk '{print $3}'
+}
+
+print_bat(){
+	cat /sys/class/power_supply/BAT0/capacity
+}
+
+print_date(){
+	date "+%a %d %b %H:%M"
+}
+
+print_wifi() {
+	ip=$(ip route get 8.8.8.8 2>/dev/null|grep -Eo 'src [0-9.]+'|grep -Eo '[0-9.]+')
+
+	if=wlan0
+		while IFS=$': \t' read -r label value
+		do
+			case $label in SSID) SSID=$value
+				;;
+			signal) SIGNAL=$value
+				;;
+		esac
+	done < <(iw "$if" link)
+
+	echo -e "$ip"
+}
+
+print_volume(){
+	amixer get Master | awk -F'[][]' 'END{ print $2 }'
+}
+
+while true
+do
+
+
+	xsetroot -name " [CPU: $(cpu_temp)] [Vol:$(print_volume)] [$(print_wifi)]  [MEM: $(print_mem)] [BAT: $(print_bat)%]  $(print_date) "
+
+
+	# Update old values to perform new calculations
+	old_received_bytes=$received_bytes
+	old_transmitted_bytes=$transmitted_bytes
+	old_time=$now
+
+	sleep 1
+
+done
