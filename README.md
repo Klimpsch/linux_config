@@ -1,6 +1,6 @@
-# Dotfiles, and Scripts
+# Dotfiles and Scripts
 
-Copy of my dotfiles and scripts used on my main machine.
+Copy of dotfiles and scripts used on my main machine.
 
 ## Programs used
 
