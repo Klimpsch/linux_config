@@ -60,3 +60,7 @@ nnoremap E $
 " $/^ doesn't do anything
 nnoremap $ <nop>
 nnoremap ^ <nop>
+
+"recompile automatically
+	audocmd BufWritePost config.h,config.def.h !sudo make install
+
