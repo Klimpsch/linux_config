@@ -10,3 +10,5 @@ PS1='[\u@\h \W]\$ '
 
 alias gac='git add -A && git commit -m'
 alias gpo='git push -u origin master'
+alias xsu='sudo xbps-install -Su -y'
+alias xrs='xbps-query -Rs'
