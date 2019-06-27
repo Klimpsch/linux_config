@@ -6,7 +6,7 @@
 alias ls='ls --color=auto'
 PS1='[\u@\h \W]\$ '
 export EDITOR=vim
-
+export VISUAL=vim
 #aliases
 
 alias gac='git add -A && git commit -m'
