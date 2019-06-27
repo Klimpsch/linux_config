@@ -10,7 +10,6 @@ vnoremap <C-c> "+y
 " Plugins
 call plug#begin('~/.vim/plugged')
 
-Plug 'VundleVim/Vundle.vim'
 Plug 'tpope/vim-surround'
 Plug 'scrooloose/nerdtree'
 Plug 'godlygeek/tabular'
@@ -62,5 +61,5 @@ nnoremap $ <nop>
 nnoremap ^ <nop>
 
 "recompile automatically
-	audocmd BufWritePost config.h,config.def.h !sudo make install
+	autocmd BufWritePost config.h,config.def.h !sudo make install
 
