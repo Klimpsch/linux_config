@@ -1,5 +1,4 @@
-setxkbmap -option ctrl:swapcaps     # Swap Left Control and Caps Lock
-setxkbmap -option ctrl:nocaps       # Make Caps Lock a Control key
-xmodmap -e 'keycode 37='
+setxkbmap -option caps:escape
 
-exec i3
+dwm_status &
+exec dwm
