@@ -15,10 +15,14 @@ Plug 'scrooloose/nerdtree'
 Plug 'godlygeek/tabular'
 Plug 'plasticboy/vim-markdown'
 Plug 'vim-syntastic/syntastic'
+Plug 'huyvohcmc/atlas.vim'
+Plug 'plan9-for-vimspace/acme-colors'
+
+
 call plug#end()
 filetype plugin indent on    " required
 
-set cursorline
+colorscheme acme
 
 " Nerdtree shortcut
 map <C-e> :NERDTreeToggle<CR>
@@ -27,7 +31,6 @@ map <F6> :setlocal spell! spelllang=en_au<CR>
 
 " markdown plugin config
 let g:vim_markdown_folding_disabled = 1
-set t_Co=256   " This is may or may not needed.
 
 
 " Number of visual spaces per tab and spaces per tab when editing
@@ -61,5 +64,4 @@ nnoremap $ <nop>
 nnoremap ^ <nop>
 
 "recompile automatically
-	autocmd BufWritePost config.h,config.def.h !sudo make install
 
